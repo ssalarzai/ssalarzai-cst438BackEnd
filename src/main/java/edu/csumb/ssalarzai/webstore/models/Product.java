@@ -1,4 +1,7 @@
-package ssalarzai.csumb.edu.springProject.models;
+package edu.csumb.ssalarzai.webstore.models;
+
+import io.swagger.annotations.ApiModelProperty;
+import org.springframework.data.annotation.Id;
 
 public class Product{
     public String getName() {
@@ -50,6 +53,8 @@ public class Product{
     }
 
     String name;
+    @ApiModelProperty(required = false, hidden = true)
+    @Id
     String id;
     String description;
     String imageURL;
