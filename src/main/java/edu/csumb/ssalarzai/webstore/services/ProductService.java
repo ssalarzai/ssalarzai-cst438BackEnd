@@ -25,6 +25,9 @@ public class ProductService{
     public void addProduct(Product product){
         productRepository.insert(product);
     }
-
+    public void updateProduct(String product_id, Integer quantity){
+        Product p = productRepository.findById(product_id).get();
+        p.updateStock(quantity);
+    }
 
 }
