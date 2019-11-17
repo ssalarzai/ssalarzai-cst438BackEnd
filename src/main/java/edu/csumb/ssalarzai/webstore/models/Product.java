@@ -4,6 +4,29 @@ import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.annotation.Id;
 
 public class Product{
+
+    String name;
+    @ApiModelProperty(required = false, hidden = true)
+    @Id
+    String id;
+    String description;
+    String imageURL;
+    Double price;
+    Integer stock;
+
+    public Product(){
+
+    }
+
+    public Product(String name, String id, String description, String imageURL, Double price, Integer stock) {
+        this.name = name;
+        this.id = id;
+        this.description = description;
+        this.imageURL = imageURL;
+        this.price = price;
+        this.stock = stock;
+    }
+
     public String getName() {
         return name;
     }
@@ -52,13 +75,10 @@ public class Product{
         this.stock = stock;
     }
 
-    String name;
-    @ApiModelProperty(required = false, hidden = true)
-    @Id
-    String id;
-    String description;
-    String imageURL;
-    Double price;
-    Integer stock;
+
+    public void updateStock(Integer stock){
+     this.stock +=stock;
+    }
+
 
 } 
